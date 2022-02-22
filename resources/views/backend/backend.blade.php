@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('tittle','Dashboard|')
+
 @section('main_body')
 <div class="row" style="display: inline-block;">
     <div class="tile_count">

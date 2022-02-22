@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\backend\BackendController;
+use App\Http\Controllers\backend\BannerController;
 use App\Http\Controllers\Frontend\FrontendController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +22,10 @@ Route::get('/', [FrontendController:: class, 'index'])->name('frontend.home');
 
 Auth::routes();
 
-Route::get('/dashboard', [BackendController::class, 'index'])->name('backend.home');
+Route::name('backend.')->group(function(){
+    Route::get('/dashboard', [BackendController::class, 'index'])->name('home');
+
+    Route::resource('/bannner', BannerController::class)->except(['show']);
+});
+
+
