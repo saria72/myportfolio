@@ -12,6 +12,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('tittle'){{ config('app.name') }}</title>
 
+    @yield('backend_css')
+
     <link href="{{ asset('backend/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <link href="{{ asset('backend/css/font-awesome.min.css') }}" rel="stylesheet">
@@ -57,8 +59,8 @@
 
                                 <li><a><i class="fa fa-edit"></i> Banner <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="{{ route('backend.bannner.create') }}">Add Banner</a></li>
-                                        <li><a href="{{ route('backend.bannner.index') }}">All Banner</a></li>
+                                        <li><a href="{{ route('backend.banner.create') }}">Add Banner</a></li>
+                                        <li><a href="{{ route('backend.banner.index') }}">All Banner</a></li>
                                     </ul>
                                 </li>
                             </ul>

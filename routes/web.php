@@ -25,7 +25,10 @@ Auth::routes();
 Route::name('backend.')->group(function(){
     Route::get('/dashboard', [BackendController::class, 'index'])->name('home');
 
-    Route::resource('/bannner', BannerController::class)->except(['show']);
+    Route::resource('/banner', BannerController::class)->except(['show']);
+    Route::get('/banner/status/{banner}', [BannerController::class, 'status'])->name('banner.status');
+    Route::get('/banner/restore/{id}', [BannerController::class, 'restore'])->name('banner.restore');
+    Route::get('/banner/delete/forever/{id}', [BannerController::class, 'deleteforever'])->name('banner.deleteforever');
 });
 
 
